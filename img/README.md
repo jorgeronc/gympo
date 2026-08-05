@@ -24,7 +24,7 @@ Identifica cada una por el **rótulo** que trae impreso arriba:
 | `progreso.png`    | "Visualiza tu progreso"                           |
 | `musculos.png`    | "Descubre qué músculos trabajas más"              |
 | `medidas.png`     | "Mide tu avance con fotos"                         |
-| `historial.png`   | "Todo tu historial y calendario"                  |
+| `perfil.png`      | "Tu perfil, tu progreso"                          |
 
 ## Notas
 
