@@ -11,7 +11,7 @@ de Android o de iOS: el contenido coincide con el rótulo.
 | `icon.png`       | Icono de la app (cuadrado, engranaje sobre círculo negro).    |
 | `banner.png`     | Banner/feature graphic 1024×500 (GymPo + "Entrena. Registra. Progresa."). Se usa como imagen para redes sociales (Open Graph). |
 
-## Carpeta `img/shots/` (capturas de la tienda)
+## Capturas de la tienda (también en `img/`)
 
 Identifica cada una por el **rótulo** que trae impreso arriba:
 
@@ -29,6 +29,7 @@ Identifica cada una por el **rótulo** que trae impreso arriba:
 ## Notas
 
 - Formato PNG o JPG (si usas JPG, cambia también la extensión en `index.html`).
+- Todas las imágenes van en la misma carpeta `img/` (sin subcarpetas).
 - `inicio.png` es la que aparece grande en el hero; el resto van en la galería.
 - Tienes más capturas disponibles (Perfil, Revisa cada entrenamiento). Si quieres
   añadirlas a la galería, súbelas aquí y avísame para enlazarlas.
