@@ -201,7 +201,7 @@
   @media (max-width: 860px) { .steps { grid-template-columns: 1fr; gap: 34px; } }
 
   /* ---------- Pro ---------- */
-  .pro-band { background: var(--ink); color: #fff; border-radius: 24px; padding: 56px; position: relative; overflow: hidden; }
+  .pro-band { background: linear-gradient(135deg, #17191f, #0c0e12); color: #fff; border-radius: 24px; padding: 56px; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,.06); }
   .pro-band::after {
     content: ""; position: absolute; right: -60px; top: -60px; width: 260px; height: 260px;
     background: radial-gradient(circle, rgba(249,115,22,.45), transparent 70%); filter: blur(10px);
@@ -221,6 +221,10 @@
   .download { text-align: center; }
   .download h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -.02em; margin: 0 0 14px; }
   .download p { color: var(--ink-soft); font-size: 1.1rem; max-width: 46ch; margin: 0 auto 30px; }
+  .app-icon {
+    display: block; width: 108px; height: 108px; margin: 0 auto 22px;
+    border-radius: 26px; box-shadow: 0 18px 40px rgba(234,88,12,.35), 0 0 0 1px rgba(0,0,0,.05);
+  }
   .stores { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
   .store {
     display: inline-flex; align-items: center; gap: 12px; text-decoration: none;
@@ -433,6 +437,7 @@
 <!-- ===== Download ===== -->
 <section id="download" class="download" style="background: var(--bg-soft);">
   <div class="wrap">
+    <img class="app-icon" src="img/icon.png" alt="Icono de la app GymPo" width="108" height="108">
     <span class="kicker">Descarga</span>
     <h2>Empieza a registrar tu progreso hoy</h2>
     <p>GymPo llega muy pronto a Google Play y App Store. ¡Estate atento!</p>
