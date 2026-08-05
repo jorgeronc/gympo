@@ -228,9 +228,11 @@
   .stores { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
   .store {
     display: inline-flex; align-items: center; gap: 12px; text-decoration: none;
-    background: var(--ink); color: #fff; padding: 12px 22px; border-radius: 12px;
+    background: #111318; color: #fff; padding: 12px 22px; border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.08);
     transition: transform .15s ease, box-shadow .15s ease;
   }
+  .store small { color: #c9ccd3; }
   .store:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(15,17,21,.25); }
   .store.disabled { opacity: .72; cursor: default; }
   .store.disabled:hover { transform: none; box-shadow: none; }
@@ -440,7 +442,7 @@
     <img class="app-icon" src="img/icon.png" alt="Icono de la app GymPo" width="108" height="108">
     <span class="kicker">Descarga</span>
     <h2>Empieza a registrar tu progreso hoy</h2>
-    <p>GymPo llega muy pronto a Google Play y App Store. ¡Estate atento!</p>
+    <p>Descárgala próximamente en Google Play y App Store.</p>
     <div class="stores">
       <span class="store disabled" aria-label="GymPo en Google Play, próximamente">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5V3.5c0-.6.3-1.1.8-1.4L14 12 3.8 21.9c-.5-.3-.8-.8-.8-1.4zm12.8-6.4 2.4 2.4-9 5.2 6.6-7.6zM5.3 1.6l9 5.2-2.4 2.4-6.6-7.6zM18.2 9l3.3 1.9c.7.4.7 1.4 0 1.8L18.2 15 15.5 12l2.7-3z"/></svg>
