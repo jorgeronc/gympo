@@ -268,6 +268,13 @@
   .foot-links { display: flex; gap: 22px; flex-wrap: wrap; }
   .foot-links a { color: var(--ink-soft); text-decoration: none; font-weight: 600; }
   .foot-links a:hover { color: var(--orange-600); }
+  .socials { display: flex; gap: 12px; margin-top: 14px; }
+  .social-ic {
+    width: 40px; height: 40px; border-radius: 11px; display: grid; place-items: center;
+    color: var(--ink-soft); border: 1px solid var(--border); text-decoration: none;
+    transition: color .15s ease, background .15s ease, border-color .15s ease, transform .15s ease;
+  }
+  .social-ic:hover { color: #fff; background: var(--orange-500); border-color: var(--orange-500); transform: translateY(-2px); }
 
   /* ---------- Dark mode ---------- */
   @media (prefers-color-scheme: dark) {
@@ -499,6 +506,14 @@
     <div>
       <a class="brand" href="#top" style="font-size:1.1rem;"><span class="logo" style="width:28px;height:28px;font-size:.9rem;"><img src="img/icon.png" alt="Icono de GymPo"></span> GymPo</a>
       <div style="margin-top:8px;">© 2026 GymPo · Tu diario de entrenamiento</div>
+      <div class="socials">
+        <a class="social-ic" href="https://www.instagram.com/gympoapp" target="_blank" rel="noopener noreferrer" aria-label="GymPo en Instagram (@gympoapp)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.07.05 1.79.22 2.43.47.66.25 1.22.6 1.77 1.15.56.56.9 1.11 1.16 1.77.25.64.42 1.36.47 2.43.05 1.07.06 1.41.06 4.12s-.01 3.06-.06 4.12c-.05 1.07-.22 1.79-.47 2.43-.25.66-.6 1.22-1.16 1.77-.55.56-1.11.9-1.77 1.16-.64.25-1.36.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.07-.05-1.79-.22-2.43-.47-.66-.25-1.22-.6-1.77-1.16-.56-.55-.9-1.11-1.15-1.77-.25-.64-.42-1.36-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.07.22-1.79.47-2.43.25-.66.6-1.22 1.15-1.77.56-.56 1.11-.9 1.77-1.15.64-.25 1.36-.42 2.43-.47C8.94 2.01 9.28 2 12 2zm0 1.8c-2.67 0-2.99.01-4.04.06-.98.04-1.5.2-1.86.34-.47.18-.8.4-1.15.75-.35.35-.57.68-.75 1.15-.14.36-.3.88-.34 1.86-.05 1.05-.06 1.37-.06 4.04s.01 2.99.06 4.04c.04.98.2 1.5.34 1.86.18.47.4.8.75 1.15.35.35.68.57 1.15.75.36.14.88.3 1.86.34 1.05.05 1.37.06 4.04.06s2.99-.01 4.04-.06c.98-.04 1.5-.2 1.86-.34.47-.18.8-.4 1.15-.75.35-.35.57-.68.75-1.15.14-.36.3-.88.34-1.86.05-1.05.06-1.37.06-4.04s-.01-2.99-.06-4.04c-.04-.98-.2-1.5-.34-1.86-.18-.47-.4-.8-.75-1.15-.35-.35-.68-.57-1.15-.75-.36-.14-.88-.3-1.86-.34-1.05-.05-1.37-.06-4.04-.06zm0 3.06a5.14 5.14 0 110 10.28 5.14 5.14 0 010-10.28zm0 1.8a3.34 3.34 0 100 6.68 3.34 3.34 0 000-6.68zm5.34-3.2a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg>
+        </a>
+        <a class="social-ic" href="https://www.tiktok.com/@gympoapp" target="_blank" rel="noopener noreferrer" aria-label="GymPo en TikTok (@gympoapp)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.4 2h2.9c.17 1.14.66 2.2 1.44 3 .78.8 1.82 1.3 2.94 1.44v2.96a7.3 7.3 0 01-4.18-1.34v6.02a5.46 5.46 0 11-5.45-5.45c.25 0 .5.02.74.05v2.96a2.5 2.5 0 101.76 2.39V2z"/></svg>
+        </a>
+      </div>
     </div>
     <div class="foot-links">
       <a href="#features">Funciones</a>
