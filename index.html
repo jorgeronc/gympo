@@ -238,7 +238,18 @@
     flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--orange-500);
     display: grid; place-items: center; color: #fff; font-size: .8rem; margin-top: 1px;
   }
-  @media (max-width: 860px) { .pro-grid { grid-template-columns: 1fr; } .pro-band { padding: 40px 28px; } }
+  .pro-list b { color: #fff; font-weight: 700; }
+  .pro-visual { display: grid; place-items: center; }
+  .pro-visual img {
+    width: 100%; max-width: 260px; border-radius: 22px;
+    box-shadow: 0 22px 50px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.05);
+  }
+  @media (max-width: 860px) {
+    .pro-grid { grid-template-columns: 1fr; }
+    .pro-band { padding: 40px 28px; }
+    .pro-visual { order: -1; margin-bottom: 8px; }
+    .pro-visual img { max-width: 220px; }
+  }
 
   /* ---------- Download CTA ---------- */
   .download { text-align: center; }
@@ -509,19 +520,23 @@
   <div class="wrap">
     <div class="pro-band">
       <div class="pro-grid">
-        <div>
-          <span class="kicker" style="color: var(--orange-400);">GymPo Pro</span>
-          <h2>Lleva tu progreso al siguiente nivel</h2>
-          <p>Desbloquea la sincronización en la nube y respalda todo tu historial. Sin datos de tarjeta para nosotros: el pago lo procesa tu tienda (Google Play o App Store).</p>
-          <a class="btn" href="#download">Probar GymPo Pro</a>
+        <div class="pro-visual">
+          <img src="img/musculos.png" alt="Clon digital de GymPo: mapa de calor muscular según tu volumen de entreno" width="264" height="572" loading="lazy">
         </div>
-        <ul class="pro-list">
-          <li><span class="check">✓</span> Sincronización automática entre dispositivos</li>
-          <li><span class="check">✓</span> Respaldo de entrenamientos, medidas y fotos en la nube</li>
-          <li><span class="check">✓</span> Tu historial siempre a salvo, aunque cambies de teléfono</li>
-          <li><span class="check">✓</span> Accede a tu clon digital y revisa el trabajo de tus músculos</li>
-        </ul>
+        <div class="pro-copy">
+          <span class="kicker" style="color: var(--orange-400);">GymPo Pro</span>
+          <h2>Conoce tu clon digital</h2>
+          <p>Un mapa de calor de tu cuerpo que te muestra qué músculos llevas bien entrenados y cuáles estás dejando pendientes. Deja de adivinar si te falta espalda o si estás sobreentrenando pecho.</p>
+          <ul class="pro-list">
+            <li><span class="check">✓</span> <b>Clon digital</b> — mapa de calor muscular actualizado con cada entreno</li>
+            <li><span class="check">✓</span> Detecta desbalances antes de que se vuelvan lesión</li>
+            <li><span class="check">✓</span> Sincronización automática entre todos tus dispositivos</li>
+            <li><span class="check">✓</span> Respaldo en la nube: cambia de teléfono sin perder tu historial</li>
+          </ul>
+          <a class="btn" href="#download">Unirme a la lista de espera</a>
+        </div>
       </div>
+      <!-- P3: el bloque de precios se insertará aquí -->
     </div>
   </div>
 </section>
