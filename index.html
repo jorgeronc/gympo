@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; script-src 'self'; connect-src https://formspree.io; form-action https://formspree.io; base-uri 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>GymPo · Tu progreso en el gym, siempre contigo</title>
 <meta name="description" content="GymPo es la app para registrar tus entrenamientos, rutinas, medidas y fotos de progreso. Sin anuncios, privada y sincronizada en la nube.">
@@ -262,6 +262,40 @@
   .store small { display: block; font-size: .68rem; opacity: .8; line-height: 1; }
   .store b { font-size: 1.05rem; line-height: 1.2; }
 
+  /* ---------- Waitlist (captura de correos) ---------- */
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+  .waitlist { max-width: 480px; }
+  .waitlist--hero { margin: 20px 0 4px; }
+  .download .waitlist { margin: 0 auto; text-align: center; }
+  .waitlist-form { display: flex; flex-wrap: wrap; gap: 10px; }
+  .download .waitlist-form { justify-content: center; }
+  .wl-input {
+    flex: 1 1 210px; min-width: 0; padding: 13px 16px; font-size: 1rem;
+    color: var(--ink); background: var(--card);
+    border: 1.5px solid var(--border); border-radius: 11px;
+    transition: border-color .15s ease, box-shadow .15s ease;
+  }
+  .wl-input::placeholder { color: var(--muted); }
+  .wl-input:focus-visible { outline: none; border-color: var(--orange-500); box-shadow: 0 0 0 3px rgba(249,115,22,.3); }
+  .wl-btn { flex: 0 0 auto; border: 0; cursor: pointer; font-size: 1rem; white-space: nowrap; }
+  .wl-btn[disabled] { opacity: .7; cursor: progress; }
+  .wl-error { flex: 1 1 100%; margin: 4px 0 0; color: #ef4444; font-size: .9rem; font-weight: 600; text-align: left; }
+  .download .wl-error { text-align: center; }
+  .wl-microcopy, .wl-legal { color: var(--muted); font-size: .82rem; margin: 12px 0 0; }
+  .download .wl-legal { max-width: 440px; margin-left: auto; margin-right: auto; }
+  .wl-offer {
+    display: inline-block; margin: 2px 0 24px; padding: 11px 20px; border-radius: 999px;
+    background: rgba(249,115,22,.12); border: 1px solid rgba(249,115,22,.4);
+    color: var(--orange-700); font-weight: 600; font-size: .95rem;
+  }
+  .wl-success { color: var(--ink-soft); font-size: 1rem; }
+  .wl-success-title { margin: 0 0 6px; color: var(--ink); font-weight: 800; font-size: 1.12rem; }
+  .waitlist--hero .wl-success { margin-top: 18px; font-weight: 600; color: var(--ink); }
+  @media (max-width: 420px) { .wl-btn { flex: 1 1 100%; } }
+
   /* ---------- Footer ---------- */
   footer { border-top: 1px solid var(--border); padding: 40px 0; color: var(--muted); font-size: .9rem; }
   .foot { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: space-between; }
@@ -293,6 +327,8 @@
     .ps-row { background: #14171d; border-color: #23272f; }
     .ps-row .t b { color: #f3f4f6; }
     .foot-links a { color: var(--ink-soft); }
+    .wl-offer { color: var(--orange-400); border-color: rgba(251,146,60,.45); }
+    .wl-error { color: #f87171; }
   }
 </style>
 </head>
@@ -331,7 +367,17 @@
         </a>
         <a class="btn ghost" href="#capturas">Ver capturas</a>
       </div>
-      <p class="hero-note">Muy pronto en Google Play y App Store · Sin anuncios · Sin recopilar tu ubicación</p>
+
+      <div class="waitlist waitlist--hero" data-source="hero">
+        <form class="waitlist-form" action="https://formspree.io/f/XXXXXXXX" method="POST" novalidate>
+          <label class="sr-only" for="wl-hero">Correo electrónico</label>
+          <input class="wl-input" id="wl-hero" type="email" name="email" placeholder="tu@correo.com" required autocomplete="email" inputmode="email" spellcheck="false">
+          <button class="btn wl-btn" type="submit">Avisarme</button>
+          <p class="wl-error" role="alert" hidden></p>
+        </form>
+        <p class="wl-microcopy">Únete a la lista de espera · 3 meses Pro gratis para los primeros 500</p>
+        <p class="wl-success" role="status" hidden>✓ Estás en la lista. ¡Te avisamos el día del lanzamiento!</p>
+      </div>
     </div>
 
     <div class="phone-stage">
@@ -484,18 +530,32 @@
 <section id="download" class="download" style="background: var(--bg-soft);">
   <div class="wrap">
     <img class="app-icon" src="img/icon.png" alt="Icono de la app GymPo" width="108" height="108">
-    <span class="kicker">Descarga</span>
-    <h2>Empieza a registrar tu progreso hoy</h2>
-    <p>Descárgala próximamente en Google Play y App Store.</p>
-    <div class="stores">
-      <span class="store disabled" aria-label="GymPo en Google Play, próximamente">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5V3.5c0-.6.3-1.1.8-1.4L14 12 3.8 21.9c-.5-.3-.8-.8-.8-1.4zm12.8-6.4 2.4 2.4-9 5.2 6.6-7.6zM5.3 1.6l9 5.2-2.4 2.4-6.6-7.6zM18.2 9l3.3 1.9c.7.4.7 1.4 0 1.8L18.2 15 15.5 12l2.7-3z"/></svg>
-        <span><small>Próximamente en</small><b>Google Play</b></span>
-      </span>
-      <span class="store disabled" aria-label="GymPo en la App Store, próximamente">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.7c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.6.8-3.3.8-.7 0-1.7-.8-2.8-.8-1.5 0-2.8.8-3.6 2.1-1.5 2.7-.4 6.6 1.1 8.8.7 1 1.6 2.2 2.7 2.2 1.1 0 1.5-.7 2.8-.7 1.3 0 1.6.7 2.8.7 1.1 0 1.9-1.1 2.6-2.1.8-1.2 1.2-2.4 1.2-2.5-.1 0-2.2-.9-2.2-3.4zM14.3 6.2c.6-.7 1-1.7.9-2.7-.9 0-1.9.6-2.5 1.3-.5.6-1 1.6-.9 2.6 1 .1 1.9-.5 2.5-1.2z"/></svg>
-        <span><small>Próximamente en</small><b>App Store</b></span>
-      </span>
+    <span class="kicker">Lista de espera</span>
+    <h2>Sé de los primeros en entrenar con GymPo</h2>
+    <p>Estamos afinando los últimos detalles antes de publicar en Google Play y App Store. Déjanos tu correo y te avisamos el día del lanzamiento.</p>
+    <p class="wl-offer">🎁 Los primeros 500 registrados reciben <b>3 meses de GymPo Pro gratis</b></p>
+
+    <!--
+      LISTA DE ESPERA · Backend con Formspree (GitHub Pages no tiene servidor propio)
+      1. Crea una cuenta gratis en https://formspree.io y un formulario nuevo.
+      2. Copia el ID del formulario y reemplaza XXXXXXXX en action="https://formspree.io/f/XXXXXXXX"
+         en LOS DOS formularios: el del hero y el de esta sección.
+      3. Los correos aparecen en el panel de Formspree y se EXPORTAN A CSV desde ahí.
+      4. El plan gratuito admite ~50 envíos/mes; amplíalo si esperas más volumen.
+      Nota: si el servicio cambiara de dominio, actualiza connect-src y form-action en la CSP (<head>).
+    -->
+    <div class="waitlist waitlist--download" data-source="download">
+      <form class="waitlist-form" action="https://formspree.io/f/XXXXXXXX" method="POST" novalidate>
+        <label class="sr-only" for="wl-download">Correo electrónico</label>
+        <input class="wl-input" id="wl-download" type="email" name="email" placeholder="tu@correo.com" required autocomplete="email" inputmode="email" spellcheck="false">
+        <button class="btn wl-btn" type="submit">Avísame cuando salga</button>
+        <p class="wl-error" role="alert" hidden></p>
+      </form>
+      <p class="wl-legal">Solo te escribiremos para avisarte del lanzamiento. Sin spam, sin compartir tu correo con nadie. Puedes darte de baja cuando quieras.</p>
+      <div class="wl-success" role="status" hidden>
+        <p class="wl-success-title">✓ Listo. Te avisamos en cuanto GymPo esté disponible.</p>
+        <p>Mientras tanto, síguenos en <a href="https://www.instagram.com/gympoapp" target="_blank" rel="noopener noreferrer">Instagram</a> y <a href="https://www.tiktok.com/@gympoapp" target="_blank" rel="noopener noreferrer">TikTok</a> para ver adelantos.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -524,5 +584,6 @@
   </div>
 </footer>
 
+<script src="main.js" defer></script>
 </body>
 </html>
