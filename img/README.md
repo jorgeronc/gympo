@@ -26,6 +26,16 @@ Identifica cada una por el **rótulo** que trae impreso arriba:
 | `medidas.png`     | "Mide tu avance con fotos"                         |
 | `perfil.png`      | "Tu perfil, tu progreso"                          |
 
+## Assets derivados (generados)
+
+- `og-banner.png` (1200×630) — imagen para redes (`og:image` / Twitter). Generada
+  a partir de `banner.png` (que se conserva a 1024×500 = *feature graphic* de Google Play).
+- `*.webp` — versión WebP de cada captura (≈83% más ligeras). El HTML las sirve con
+  `<picture><source type="image/webp">` y `<img …png>` como respaldo.
+- `../favicon.ico` (raíz) — favicon multi-tamaño generado desde `icon.png`.
+
+Para regenerarlos: `pip install Pillow` y reejecutar el script de generación.
+
 ## Notas
 
 - Formato PNG o JPG (si usas JPG, cambia también la extensión en `index.html`).

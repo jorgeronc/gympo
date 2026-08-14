@@ -14,9 +14,9 @@
 <meta property="og:description" content="La app de gimnasio para el registro de entrenamientos: crea rutinas de gym y sigue tu progreso muscular. Sin anuncios y privada.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gympoapp.com">
-<meta property="og:image" content="https://gympoapp.com/img/banner.png">
-<meta property="og:image:width" content="1024">
-<meta property="og:image:height" content="500">
+<meta property="og:image" content="https://gympoapp.com/img/og-banner.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="GymPo · Entrena. Registra. Progresa.">
 <meta property="og:locale" content="es_MX">
 <meta property="og:site_name" content="GymPo">
@@ -25,13 +25,13 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="GymPo · Tu progreso en el gym, siempre contigo">
 <meta name="twitter:description" content="La app de gimnasio para registrar entrenamientos, crear rutinas de gym y seguir tu progreso muscular. Sin anuncios y privada.">
-<meta name="twitter:image" content="https://gympoapp.com/img/banner.png">
+<meta name="twitter:image" content="https://gympoapp.com/img/og-banner.png">
 
 <meta name="theme-color" content="#F97316">
 
 <!-- Iconos -->
+<link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="img/icon.png" type="image/png">
-<link rel="icon" href="img/icon.png" sizes="any">
 <link rel="apple-touch-icon" href="img/icon.png">
 
 <!-- Schema.org · datos de la app (mantener precios en sync con PRICING de main.js) -->
@@ -43,7 +43,7 @@
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Android, iOS",
   "url": "https://gympoapp.com",
-  "image": "https://gympoapp.com/img/banner.png",
+  "image": "https://gympoapp.com/img/og-banner.png",
   "description": "App de gimnasio para el registro de entrenamientos: rutinas de gym, progreso muscular con clon digital y diario de entrenamiento.",
   "inLanguage": "es-MX",
   "offers": [
@@ -485,9 +485,12 @@
     </div>
 
     <div class="phone-stage">
-      <img class="hero-shot" src="img/inicio.png"
-           alt="Pantalla de inicio de GymPo mostrando tu progreso semanal y entrenamientos recientes"
-           width="300" height="649" loading="eager">
+      <picture>
+        <source type="image/webp" srcset="img/inicio.webp">
+        <img class="hero-shot" src="img/inicio.png"
+             alt="Pantalla de inicio de GymPo mostrando tu progreso semanal y entrenamientos recientes"
+             width="300" height="649" loading="eager">
+      </picture>
     </div>
   </div>
 </div>
@@ -567,12 +570,12 @@
       <p>Una interfaz oscura, clara y hecha para usar entre serie y serie.</p>
     </div>
     <div class="shots-scroll">
-      <figure class="shot"><img src="img/entrenar.png" alt="Registrar series de un entrenamiento con descanso automático" width="232" height="502" loading="lazy"></figure>
-      <figure class="shot"><img src="img/rutinas.png" alt="Lista de rutinas personalizadas" width="232" height="502" loading="lazy"></figure>
-      <figure class="shot"><img src="img/ejercicios.png" alt="Biblioteca de ejercicios con guía" width="232" height="502" loading="lazy"></figure>
-      <figure class="shot"><img src="img/progreso.png" alt="Gráficas de progreso y volumen por grupo muscular" width="232" height="502" loading="lazy"></figure>
-      <figure class="shot"><img src="img/medidas.png" alt="Medidas y fotos de progreso" width="232" height="502" loading="lazy"></figure>
-      <figure class="shot"><img src="img/perfil.png" alt="Perfil con acceso a historial, progreso y medidas" width="232" height="502" loading="lazy"></figure>
+      <figure class="shot"><picture><source type="image/webp" srcset="img/entrenar.webp"><img src="img/entrenar.png" alt="Registrar series de un entrenamiento con descanso automático" width="232" height="502" loading="lazy"></picture></figure>
+      <figure class="shot"><picture><source type="image/webp" srcset="img/rutinas.webp"><img src="img/rutinas.png" alt="Lista de rutinas personalizadas" width="232" height="502" loading="lazy"></picture></figure>
+      <figure class="shot"><picture><source type="image/webp" srcset="img/ejercicios.webp"><img src="img/ejercicios.png" alt="Biblioteca de ejercicios con guía" width="232" height="502" loading="lazy"></picture></figure>
+      <figure class="shot"><picture><source type="image/webp" srcset="img/progreso.webp"><img src="img/progreso.png" alt="Gráficas de progreso y volumen por grupo muscular" width="232" height="502" loading="lazy"></picture></figure>
+      <figure class="shot"><picture><source type="image/webp" srcset="img/medidas.webp"><img src="img/medidas.png" alt="Medidas y fotos de progreso" width="232" height="502" loading="lazy"></picture></figure>
+      <figure class="shot"><picture><source type="image/webp" srcset="img/perfil.webp"><img src="img/perfil.png" alt="Perfil con acceso a historial, progreso y medidas" width="232" height="502" loading="lazy"></picture></figure>
     </div>
     <p style="text-align:center; color:var(--muted); font-size:.85rem; margin:10px 0 0;">Desliza para ver más →</p>
   </div>
@@ -615,7 +618,10 @@
         <h3>Revisa tu clon digital</h3>
         <p>Revisa cuándo has trabajado tus músculos en tu clon digital: un mapa de calor que resalta qué grupos llevas más entrenados y cuáles tienes pendientes.</p>
       </div>
-      <img src="img/musculos.png" alt="Mapa de calor muscular de GymPo: tu clon digital" width="168" height="363" loading="lazy">
+      <picture>
+        <source type="image/webp" srcset="img/musculos.webp">
+        <img src="img/musculos.png" alt="Mapa de calor muscular de GymPo: tu clon digital" width="168" height="363" loading="lazy">
+      </picture>
     </div>
   </div>
 </section>
@@ -626,7 +632,10 @@
     <div class="pro-band">
       <div class="pro-grid">
         <div class="pro-visual">
-          <img src="img/musculos.png" alt="Clon digital de GymPo: mapa de calor muscular según tu volumen de entreno" width="264" height="572" loading="lazy">
+          <picture>
+            <source type="image/webp" srcset="img/musculos.webp">
+            <img src="img/musculos.png" alt="Clon digital de GymPo: mapa de calor muscular según tu volumen de entreno" width="264" height="572" loading="lazy">
+          </picture>
         </div>
         <div class="pro-copy">
           <span class="kicker" style="color: var(--orange-400);">GymPo Pro</span>
