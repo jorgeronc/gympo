@@ -291,6 +291,24 @@
   .pricing-note { position: relative; z-index: 1; text-align: center; color: #9aa0ab; font-size: .85rem; margin: 22px 0 0; }
   .pricing-noscript { color: #c9ccd3; text-align: center; }
 
+  /* ---------- FAQ ---------- */
+  .faq-list { max-width: 760px; margin: 0 auto; display: grid; gap: 12px; }
+  .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 14px; }
+  .faq-item summary {
+    cursor: pointer; list-style: none; padding: 18px 22px;
+    font-weight: 700; font-size: 1.05rem; color: var(--ink);
+    display: flex; justify-content: space-between; align-items: center; gap: 14px;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: "+"; flex: none; font-size: 1.5rem; font-weight: 400; line-height: 1; color: var(--orange-500);
+  }
+  .faq-item[open] summary::after { content: "\2212"; }
+  .faq-item summary:focus-visible { outline: 2px solid var(--orange-500); outline-offset: 2px; border-radius: 10px; }
+  .faq-item summary:hover { color: var(--orange-600); }
+  .faq-answer { padding: 0 22px 20px; color: var(--ink-soft); font-size: .98rem; }
+  .faq-answer p { margin: 0; }
+
   /* ---------- Download CTA ---------- */
   .download { text-align: center; }
   .download h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -.02em; margin: 0 0 14px; }
@@ -396,6 +414,7 @@
       <a href="#capturas">Capturas</a>
       <a href="#how">Cómo funciona</a>
       <a href="#pro">GymPo Pro</a>
+      <a href="#faq">FAQ</a>
       <a href="#download">Descargar</a>
     </nav>
     <div class="nav-cta">
@@ -595,6 +614,62 @@
     </div>
   </div>
 </section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Preguntas frecuentes</span>
+      <h2>Resolvemos tus dudas</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>¿GymPo es gratis?</summary>
+        <div class="faq-answer"><p>Sí. Registrar entrenamientos, crear rutinas, llevar tus medidas y guardar fotos de progreso es gratis para siempre y sin anuncios. GymPo Pro añade la sincronización en la nube y el clon digital.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Necesito internet para usarla?</summary>
+        <div class="faq-answer"><p>No. GymPo funciona completa sin conexión, que es justo lo que necesitas en un gimnasio con mala señal. Con Pro, tus datos se sincronizan solos cuando vuelves a tener internet.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué pasa si cambio de teléfono?</summary>
+        <div class="faq-answer"><p>Con GymPo Pro tu historial completo se restaura al iniciar sesión en el nuevo dispositivo. Sin Pro, los datos viven solo en tu teléfono.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Puedo cancelar cuando quiera?</summary>
+        <div class="faq-answer"><p>Sí. Las suscripciones se gestionan desde Google Play o App Store y las cancelas desde ahí en cualquier momento. Conservas el acceso hasta que termine el periodo que ya pagaste.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué es el clon digital?</summary>
+        <div class="faq-answer"><p>Es un mapa de calor de tu cuerpo que se colorea según cuánto has trabajado cada grupo muscular. De un vistazo ves si llevas la espalda descuidada o si le estás dando de más al pecho.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Qué hacen con mis datos?</summary>
+        <div class="faq-answer"><p>Nada. No mostramos anuncios, no rastreamos tu ubicación y no vendemos ni compartimos tu información. Puedes borrar todos tus datos desde la app cuando quieras.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>¿Sirve si entreno en casa?</summary>
+        <div class="faq-answer"><p>Sí. Puedes crear tus propios ejercicios y rutinas con o sin equipo, y la biblioteca incluye ejercicios de peso corporal.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿GymPo es gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Registrar entrenamientos, crear rutinas, llevar tus medidas y guardar fotos de progreso es gratis para siempre y sin anuncios. GymPo Pro añade la sincronización en la nube y el clon digital." } },
+    { "@type": "Question", "name": "¿Necesito internet para usarla?", "acceptedAnswer": { "@type": "Answer", "text": "No. GymPo funciona completa sin conexión, que es justo lo que necesitas en un gimnasio con mala señal. Con Pro, tus datos se sincronizan solos cuando vuelves a tener internet." } },
+    { "@type": "Question", "name": "¿Qué pasa si cambio de teléfono?", "acceptedAnswer": { "@type": "Answer", "text": "Con GymPo Pro tu historial completo se restaura al iniciar sesión en el nuevo dispositivo. Sin Pro, los datos viven solo en tu teléfono." } },
+    { "@type": "Question", "name": "¿Puedo cancelar cuando quiera?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Las suscripciones se gestionan desde Google Play o App Store y las cancelas desde ahí en cualquier momento. Conservas el acceso hasta que termine el periodo que ya pagaste." } },
+    { "@type": "Question", "name": "¿Qué es el clon digital?", "acceptedAnswer": { "@type": "Answer", "text": "Es un mapa de calor de tu cuerpo que se colorea según cuánto has trabajado cada grupo muscular. De un vistazo ves si llevas la espalda descuidada o si le estás dando de más al pecho." } },
+    { "@type": "Question", "name": "¿Qué hacen con mis datos?", "acceptedAnswer": { "@type": "Answer", "text": "Nada. No mostramos anuncios, no rastreamos tu ubicación y no vendemos ni compartimos tu información. Puedes borrar todos tus datos desde la app cuando quieras." } },
+    { "@type": "Question", "name": "¿Sirve si entreno en casa?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Puedes crear tus propios ejercicios y rutinas con o sin equipo, y la biblioteca incluye ejercicios de peso corporal." } }
+  ]
+}
+</script>
 
 <!-- ===== Download ===== -->
 <section id="download" class="download" style="background: var(--bg-soft);">
