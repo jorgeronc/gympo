@@ -11,6 +11,66 @@
   var STORAGE_KEY = 'gympo_waitlist';
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+  /* ---------------------------------------------------------------
+   * PRECIOS · Fuente única de verdad.
+   * Ajusta aquí y se actualizan las tres tarjetas automáticamente.
+   * (Moneda en MXN. El cobro real lo procesa Google Play / App Store.)
+   * ------------------------------------------------------------- */
+  var PRICING = [
+    {
+      nombre: 'Mensual',
+      precio: '$49',
+      moneda: 'MXN',
+      periodo: 'al mes',
+      equivalencia: '',
+      ahorro: '',
+      descripcion: 'Prueba sin compromiso. Cancela cuando quieras.',
+      badge: '',
+      destacada: false
+    },
+    {
+      nombre: 'Anual',
+      precio: '$499',
+      moneda: 'MXN',
+      periodo: 'al año',
+      equivalencia: '$41.58 al mes',
+      ahorro: 'Ahorras $89 al año',
+      descripcion: 'La opción que elige la mayoría.',
+      badge: 'MÁS POPULAR',
+      destacada: true
+    },
+    {
+      nombre: 'Vitalicia',
+      precio: '$999',
+      moneda: 'MXN',
+      periodo: 'para siempre',
+      equivalencia: 'Se paga solo en 2 años y 5 meses',
+      ahorro: '',
+      descripcion: 'Un solo pago. Todas las funciones Pro de por vida, incluidas las que vengan después.',
+      badge: 'PAGO ÚNICO',
+      destacada: false
+    }
+  ];
+
+  function renderPricing() {
+    var el = document.getElementById('pricing');
+    if (!el) return;
+    var html = '';
+    for (var i = 0; i < PRICING.length; i++) {
+      var p = PRICING[i];
+      html += '<div class="price-card' + (p.destacada ? ' price-card--featured' : '') + '">';
+      if (p.badge) html += '<span class="price-badge">' + p.badge + '</span>';
+      html += '<h3 class="price-name">' + p.nombre + '</h3>';
+      html += '<div class="price-amount"><span class="price-value">' + p.precio + '</span> <span class="price-cur">' + p.moneda + '</span></div>';
+      html += '<div class="price-period">' + p.periodo + '</div>';
+      if (p.equivalencia) html += '<div class="price-equiv">' + p.equivalencia + '</div>';
+      if (p.ahorro) html += '<span class="price-save">' + p.ahorro + '</span>';
+      html += '<p class="price-desc">' + p.descripcion + '</p>';
+      html += '</div>';
+    }
+    el.innerHTML = html;
+  }
+
   function joined() {
     try { return localStorage.getItem(STORAGE_KEY) === '1'; } catch (e) { return false; }
   }
@@ -90,6 +150,7 @@
   }
 
   function init() {
+    renderPricing();
     var wraps = document.querySelectorAll('.waitlist');
     if (joined()) {
       for (var i = 0; i < wraps.length; i++) showSuccess(wraps[i]);
