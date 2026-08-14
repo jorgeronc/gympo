@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gympoapp.com/sitemap.xml
