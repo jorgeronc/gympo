@@ -247,9 +247,11 @@
 
   /* Featured row (pasos 4 y 5 + imagen) */
   .step-feature {
-    margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;
+    margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr auto; gap: 34px; align-items: center;
     background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 30px 34px;
   }
+  .step-feature img { width: 150px; justify-self: center; border-radius: 16px;
+    box-shadow: 0 14px 30px rgba(15,17,21,.12), 0 0 0 1px rgba(0,0,0,.05); }
   .step-f-item .fnum {
     width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center;
     font-weight: 900; font-size: 1.2rem; color: #fff; margin-bottom: 16px;
@@ -615,7 +617,12 @@
         <div class="fnum">5</div>
         <h3>Revisa tu clon digital</h3>
         <p>Revisa cuándo has trabajado tus músculos en tu clon digital: un mapa de calor que resalta qué grupos llevas más entrenados y cuáles tienes pendientes.</p>
-      </div>    </div>
+      </div>
+      <picture>
+        <source type="image/webp" srcset="img/clon-digital.webp">
+        <img src="img/clon-digital.png" alt="Clon digital de GymPo: figura con mapa de calor muscular" width="150" height="344" loading="lazy">
+      </picture>
+    </div>
   </div>
 </section>
 
