@@ -46,4 +46,4 @@ The palette supports light + dark via `@media (prefers-color-scheme: dark)`, whi
 
 - Copy is in **Spanish**; brand tagline is **"Entrena · Registra · Progresa"**.
 - The app is **pre-launch / in testing**: the Google Play and App Store buttons are intentional **"Próximamente"** placeholders (styled but non-linking). When real store URLs arrive, they replace the placeholder `<span class="store disabled">` elements.
-- Contact email is `contacto@gympoapp.com`; social links are `@gympoapp` (Instagram, TikTok).
+- Contact email is `jron@gympoapp.com`; social links are `@gympoapp` (Instagram, TikTok).
