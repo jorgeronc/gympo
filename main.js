@@ -149,8 +149,20 @@
     });
   }
 
+  function respectReducedMotion() {
+    var v = document.getElementById('mascotaVideo');
+    if (!v || !window.matchMedia) return;
+    try {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        v.removeAttribute('autoplay');
+        v.pause();
+      }
+    } catch (e) { /* noop */ }
+  }
+
   function init() {
     renderPricing();
+    respectReducedMotion();
     var wraps = document.querySelectorAll('.waitlist');
     if (joined()) {
       for (var i = 0; i < wraps.length; i++) showSuccess(wraps[i]);

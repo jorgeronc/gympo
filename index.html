@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'unsafe-inline'; script-src 'self'; connect-src https://formspree.io; form-action https://formspree.io; base-uri 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; media-src 'self'; style-src 'unsafe-inline'; script-src 'self'; connect-src https://formspree.io; form-action https://formspree.io; base-uri 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>GymPo · Tu progreso en el gym, siempre contigo</title>
 <meta name="description" content="GymPo es la app de gimnasio para el registro de entrenamientos: crea rutinas de gym, sigue tu progreso muscular con tu clon digital y lleva tu diario de entrenamiento. Sin anuncios y privada.">
@@ -343,6 +343,13 @@
   .faq-answer { padding: 0 22px 20px; color: var(--ink-soft); font-size: .98rem; }
   .faq-answer p { margin: 0; }
 
+  /* ---------- Mascota (vídeo de marca) ---------- */
+  .mascota-video {
+    max-width: 760px; margin: 0 auto; border-radius: 20px; overflow: hidden; line-height: 0;
+    box-shadow: 0 24px 50px rgba(15,17,21,.18), 0 0 0 1px rgba(0,0,0,.05);
+  }
+  .mascota-video video { display: block; width: 100%; height: auto; }
+
   /* ---------- Download CTA ---------- */
   .download { text-align: center; }
   .download h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -.02em; margin: 0 0 14px; }
@@ -578,6 +585,23 @@
       <figure class="shot"><picture><source type="image/webp" srcset="img/perfil.webp"><img src="img/perfil.png" alt="Perfil con acceso a historial, progreso y medidas" width="232" height="502" loading="lazy"></picture></figure>
     </div>
     <p style="text-align:center; color:var(--muted); font-size:.85rem; margin:10px 0 0;">Desliza para ver más →</p>
+  </div>
+</section>
+
+<!-- ===== Mascota ===== -->
+<section id="mascota">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Conoce a GymPo</span>
+      <h2>Tu compañero de entreno</h2>
+      <p>La mascota que suda cada serie contigo. Entrena · Registra · Progresa.</p>
+    </div>
+    <div class="mascota-video">
+      <video id="mascotaVideo" autoplay muted loop playsinline poster="img/gympo-mascota.jpg"
+             aria-label="Animación de la mascota de GymPo haciendo press de banca en un gimnasio">
+        <source src="img/gympo-mascota.mp4" type="video/mp4">
+      </video>
+    </div>
   </div>
 </section>
 

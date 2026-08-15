@@ -35,6 +35,8 @@ Identifica cada una por el **rótulo** que trae impreso arriba:
 - `../favicon.ico` (raíz) — favicon multi-tamaño generado desde `icon.png`.
 - `clon-espalda.{png,webp}` — recorte de la figura del clon digital (vista Espalda),
   usado en el paso 5 de "Cómo funciona". El héroe de GymPo Pro usa `musculos.*` (vista Frente).
+- `gympo-mascota.mp4` + `gympo-mascota.jpg` (póster) — animación de marca (mascota, 16:9),
+  recortada del vídeo vertical original y comprimida. Se reproduce en bucle mudo en la sección "Conoce a GymPo".
 
 Para regenerarlos: `pip install Pillow` y reejecutar el script de generación.
 
