@@ -33,6 +33,8 @@ Identifica cada una por el **rótulo** que trae impreso arriba:
 - `*.webp` — versión WebP de cada captura (≈83% más ligeras). El HTML las sirve con
   `<picture><source type="image/webp">` y `<img …png>` como respaldo.
 - `../favicon.ico` (raíz) — favicon multi-tamaño generado desde `icon.png`.
+- `clon-espalda.{png,webp}` — recorte de la figura del clon digital (vista Espalda),
+  usado en el paso 5 de "Cómo funciona". El héroe de GymPo Pro usa `musculos.*` (vista Frente).
 
 Para regenerarlos: `pip install Pillow` y reejecutar el script de generación.
 
